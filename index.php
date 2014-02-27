@@ -2,6 +2,7 @@
 	 <head>
 		<title> Products </title>
         <link rel="stylesheet" type="text/css" href="css/template.css">
+        <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
 	 </head>
 	 <body>
      <div class="container">
@@ -68,7 +69,7 @@
                          
                          <div class="search_result_content">
 							<div class="search_result_title">
-                            <p id="title">Pneumatic System</p>
+                            <p id="title"></p>
                             </div>
                             
                             <div class="search_result_summary">
@@ -79,6 +80,9 @@
                             </div>
                          </div>
                     </div>
+            <div class="footer">
+            <p> Contact at sourabharsh@gmail.com in case of any glitches.</p>
+            </div>
                
        
      </div>
