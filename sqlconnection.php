@@ -22,15 +22,27 @@
 						$db_name = "pdlab_db";
 						$selected_db = mysql_select_db($db_name,$dbhandle)
 										or die("Failed to connect to the Database");
-						// create A table 
-						$sql = "Create Table projects
-								(Id INT,
-								 ProjectName varchar(255),
+						// Check wether Table Projects exists or not. if not create it!
+						$sql = "SELECT 1 FROM Projects";
+						if(sql_query($sql,$dbhandle) === FALSE)
+						{
+							$sql = "Create Table[IF NOT EXISTS] Projects
+								(ProjectName varchar(255),
 								 Description varchar(255),
 								 imageName   varchar(255)
 								 )";
+							$result = mysql_query($sql,$dbhandle)
+								 	  or die("Failed to create the table");
+						}
+						
+						
+								  
+						$sql = "INSERT INTO Projects ( ProjectName, Description, imageName)
+								VALUES ('dummyproject', 'This is awesome. I am lovint it!', 'png')";
+						
 						$result = mysql_query($sql,$dbhandle)
-								  or die("Failed to create the table");
+								  or die("Failed to insert Dummyproject into Projects Table ".mysql_error());
+								
 								 
 						
 
