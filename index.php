@@ -69,7 +69,7 @@
                          
                          <div class="search_result_content">
 							<div class="search_result_title">
-                            <p id="title"></p>
+                            <p id="title"> Pneumatic System</p>
                             </div>
                             
                             <div class="search_result_summary">
