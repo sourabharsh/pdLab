@@ -40,15 +40,44 @@
 						
 						while($row = mysql_fetch_assoc($result))
 						{	
-							print '<div class="search_result">'. 
-								'<h1> '.$row['Description'] ." </h1>".
-               					"</div>";	
+
+							print '<div class="search_result">
+                         				<div class="search_result_image">
+        	                  		  		<img  src='.$row['Image'] .'>
+				                        </div>                
+                         
+        			                    <div class="search_result_content">
+											<div class="search_result_title">
+            	            				    <p id="title">' .$row['ProjectName'] .'</p>
+                	            			</div>
+                            
+		                    	        	<div class="search_result_summary">
+    		        	        	        	<p>' .$row['Summary'] .' </p>
+	        		                	    </div>
+        	            		     	</div>
+	                     		 </div>';
+					
 							}
 						
 					?>
                     
                     <div class="search_result">
-                    
+                         <div class="search_result_image">
+                            <img  src="assets/icons/3.png">
+                         </div>                
+                         
+                         <div class="search_result_content">
+							<div class="search_result_title">
+                            <p id="title">Pneumatic System</p>
+                            </div>
+                            
+                            <div class="search_result_summary">
+                            <p>
+                            The mismanagement of projects as well as huge delays in refits to extend operational lives of       		   							submarines further compounds the problem, say experts. Apart from one nuclear-powered submarine on                			lease from Russia, the Navy has 13 conventional submarines but all except for one are over 20 years           					old. INS Sindhuratna, on board which two officers were killed and several others injured on Wednesday,   							in fact, is among the eight submarines over 25 years old. 
+                            </p>
+                            
+                            </div>
+                         </div>
                     </div>
                
        
