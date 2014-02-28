@@ -72,7 +72,8 @@
 				//Display Data
 				$reload = $_SERVER['PHP_SELF'] ."?tpages=" . $tpages;
 				for($i=$start; $i < $end; $i++){
-					print '<div class="search_result">
+					print '<a href="/pdlab/project.php?project='.mysql_result($result,$i,'Id')  .'" >
+								<div class="search_result">
                                             <div class="search_result_image">
                                                 <img  src='.mysql_result($result,$i,'Image') .'>
                                             </div>                
@@ -86,7 +87,8 @@
                                                     <p>' .mysql_result($result,$i,'Description') .' </p>
                                                 </div>
                                             </div>
-                                     </div>';	
+                                     </div>
+						  </a>';
 				}
 				
 				echo '<div id="pagination">';
