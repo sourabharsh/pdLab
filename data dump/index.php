@@ -23,84 +23,60 @@
             </div>
            
             <?php 		
-				include('config.php');
-				include('paginate.php');
-				
-				$per_page_items = 2;
-				$sql = "SELECT * FROM Projects";
-				$result = mysql_query($sql);
-				$total_results = mysql_num_rows($result);
-				$total_pages = ceil($total_results/$per_page_items);
-				
-				//If the Page is SETCHECK
-				if(isset($_GET['page']))
-				{
-					$show_page = $_GET['page'];				//Current page
-					
-					if($show_page <= $total_pages && $show_page >0)
-					{
-						$start = ($show_page -1)*$per_page_items;
-						$end = $start + $per_page_items;
-					}
-					else
-					{
-						//error, show the first page
-						$start = 0;
-						$end = $start + $per_page_items;
-					}
-				}
-				else
-				{
-					//The page tag is not set  so Show the first page
-					$show_page =1;
-					$start = 0;
-					$end = $start + $per_page_items;
-				}
-				
-				// Display Pagination
-				//$page = intval($_GET['page']);
-				
-				//$page = 1;
-				//$show_page =1;	
-				$tpages = $total_pages;
-				/*if($page <= 0)
-				 	$page =1;
-				*/
-				$reload = $_SERVER['PHP_SELF']. "?tpages=". $tpages;
-				
-				
-				//Display Data
-				$reload = $_SERVER['PHP_SELF'] ."?tpages=" . $tpages;
-				for($i=$start; $i < $end; $i++){
-					print '<div class="search_result">
+							include('functions.php');
+                        // connect to the Wampserver mysql database
+                            //Define credentials
+                            $username = "root";
+                            $password = "";
+                            $hostname = "localhost";
+                            
+                            $dbhandle = mysql_connect($hostname,$username,$password) 
+                                        or die("Failed to connect to Mysql");
+                            
+                            // Select our database: pdlab_db
+                            $db_name = "pdlab_db";
+                            $selected_db = mysql_select_db($db_name,$dbhandle)
+                                            or die("Failed to connect to the Database");
+                            $sql = "SELECT * from projects";
+                                $result = mysql_query($sql, $dbhandle)
+                                          or die("Failed to select Data ". mysql_error());
+                            //Number of entries per page 
+							$n_entries = 2;
+							
+                            //Print Search results
+							$count =0;
+							//Number of projects
+							$total_projects = mysql_num_rows($result);
+                            while($row = mysql_fetch_assoc($result))
+                            {	
+    							
+                                print '<div class="search_result">
                                             <div class="search_result_image">
-                                                <img  src='.mysql_result($result,$i,'Image') .'>
+                                                <img  src='.$row['Image'] .'>
                                             </div>                
                              
                                             <div class="search_result_content">
                                                 <div class="search_result_title">
-                                                    <p id="title">' .mysql_result($result,$i,'ProjectName') .'</p>
+                                                    <p id="title">' .$row['ProjectName'] .'</p>
                                                 </div>
                                 
                                                 <div class="search_result_summary">
-                                                    <p>' .mysql_result($result,$i,'Description') .' </p>
+                                                    <p>' .$row['Summary'] .' </p>
                                                 </div>
                                             </div>
-                                     </div>';	
-				}
-				
-				echo '<div id="pagination">';
-				if($total_pages > 1 ){
-					echo paginate($reload, $show_page, $total_pages);	
-				}
-				echo '</div>';
-
-				
-				
-				
-				
-			?>	
-						
+                                     </div>';
+									 
+								$count++;
+								if($count%$n_entries == 0)
+									{
+										printPagination($count,$n_entries, $total_projects);
+										break;
+									}
+                            }
+							
+							
+                            
+                        ?>
                         
            <!-- <div class="search_result">
                 <div class="search_result_image">
@@ -127,9 +103,9 @@
             </div>  -->
             
             <div class="footer">
-                <p> Contact at sourabharsh@gmail.com in case of any glitch in the page.</p>
+                <p> Contact at sourabharsh@gmail.com in case of any glitches in the page.</p>
             </div>
-                  
+                   
            
          </div>
 	 </body>
