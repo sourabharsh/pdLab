@@ -9,29 +9,30 @@
          <div class="container">
             <div class="header_top">
             </div>
-                    
-            <div class="header">
-                <a href="index.php"> <img class="logo" src="assets/logo.png"></a>
-                    <div class="search">
-                        <input id="search_input"></input>
-     
-                        <button id="search_button"></button>     
-                    </div>                
-            </div>
             
-            <div class="header_bottom">
-            </div>
-           
-            <?php 		
+            <?php 		 
+            	           
 				include('config.php');
 				include('paginate.php');
 				
 				$per_page_items = 2;
 				$sql = "SELECT * FROM Projects";
 				$result = mysql_query($sql);
+				mysql_close($mysql_conn);
 				$total_results = mysql_num_rows($result);
 				$total_pages = ceil($total_results/$per_page_items);
-				
+				print '<div class="header">
+                			<a href="index.php"> <img class="logo" src="assets/logo_home.png"></a>
+							
+			                <div class="search">
+            			        <input id="search_input"></input>
+			                    <button id="search_button"></button>     
+								
+			                </div>                							
+							
+			           </div>';
+				 print '<div class="header_top">
+				 		</div>';
 				//If the Page is SETCHECK
 				if(isset($_GET['page']))
 				{
@@ -71,6 +72,7 @@
 				
 				//Display Data
 				$reload = $_SERVER['PHP_SELF'] ."?tpages=" . $tpages;
+				print '<div class="search_section">';
 				for($i=$start; $i < $end; $i++){
 					print '<a href="/pdlab/project.php?project='.mysql_result($result,$i,'Id')  .'" >
 								<div class="search_result">
@@ -90,6 +92,7 @@
                                      </div>
 						  </a>';
 				}
+				print "</div>";
 				
 				echo '<div id="pagination">';
 				if($total_pages > 1 ){

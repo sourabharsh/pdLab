@@ -14,12 +14,12 @@ body{
 .header_top{
 	background:white;
 	width:100%;
-	height:10px;	
+	height:20px;	
     background:#F6F7FA;
 	}
 	
 .header{
-	padding-bottom:10px;
+
 	height:auto;
 	width:100%;
 	background:#F6F7FA;
@@ -28,8 +28,20 @@ body{
 .header_bottom{
 	height:30px;
 	widows:100px;
-	}
 
+	}
+.header h1{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:14px;
+	line-height:18px;
+	color:#999;
+	
+	padding:0;
+	font-weight:300;
+	margin:0px;
+	margin-left:27%;
+	
+	}
 	
 .footer{
 	font-family: 'Source Sans Pro', sans-serif;
@@ -46,16 +58,17 @@ body{
 
 .logo{
 	vertical-align:middle;
+	margin:0;
 	margin-left:10px;
 	display:inline-block;
 	}
 
 .search{
-	vertical-align:middle;
+
 	height:40px;
 	width:600px;
-	margin-left:20px;
-
+	margin-left:2%;
+	margin-bottom:0;
 
 	display:inline;
 	vertical-align:middle;
@@ -81,6 +94,8 @@ body{
 	display:inline-block;
 	margin-right:0;
 	margin-left:0;
+	margin-bottom:0;
+	padding-bottom:0;
 	width:100px;
 	height:40px;
 	padding:0;
@@ -88,13 +103,18 @@ body{
 	background:url(../assets/search_button.png);
 	}
 	
+.search_section{
+	width: 80%;
+	height:auto;
+	float:right;
+	margin-right:3%;
+	}
+	
 .search_result{
-	width:1000px;
+	width:100%;
 	height:200px;
 	margin-top:3px;
-	margin-left:auto;
-	margin-right:30px;
-	padding -bottom:3px;
+	margin-bottom:4px;
 	border-right:3px solid white;
 	background:#ffffff;
 	}
@@ -245,3 +265,4 @@ body{
 	vertical-align:middle;
 	color:#666;	
 	}
+
