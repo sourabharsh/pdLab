@@ -20,17 +20,17 @@ body{
 	
 .header{
 
-	height:auto;
+	height:60px;
 	width:100%;
 	background:#F6F7FA;
 	}
 	
 .header_bottom{
-	height:30px;
+	height:20px;
 	widows:100px;
 
 	}
-.header h1{
+.This_was_header h1{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size:14px;
 	line-height:18px;

@@ -3,30 +3,37 @@
 
 
 .project_menu{
+	visibility:hidden;
+	
 	height:30px;
-	width:auto;
 	background:white;
-	font-family:'Source Sans Pro', sans-serif;
-	margin-left:100px;
+	font-family:'Source Sans Pro', sans-serif;	
+	margin-right:100px;
 	margin-bottom:0px;
 	font-size:18px;
 	border:1px solid #CCC;
 	outline:0;
+	display:inline-block;
 	}
 	
 .project_section{
 	width:100%;
 	height:auto;
 	background:#F6F7FA;
+	margin-bottom:200px;
 	}
 
-.project_Name{
-	margin-left:10px;
+.project_name{
 	font-family:'Source Sans Pro', sans-serif;
-	font-size:15px;
+	font-weight:300;
+	font-size:30px;
+	margin:0;	
+	margin-left:5%;
 	color:#61C3CC;	
-	background:white;	
+	vertical-align:middle;
+	display:inline-block;
 	}
+
 	
 .problem_statement {
 	margin:0;

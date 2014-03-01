@@ -15,17 +15,28 @@
 </head>
 
 <body>
+	<?php
+    	include("config.php");
+                    if( isset($_GET['project'])){		
+                        $id= intval($_GET['project']);
+
+                    }
+					$sql = "SELECT * FROM Projects where Id = $id";
+					$result = mysql_query($sql, $mysql_conn)
+							  or die("Failed to select the id");
+					$row = mysql_fetch_array($result);
+	?>
+	
 	<div class="container">
     		<div class="header_top">
             </div>
             
             <div class="header">
-                <a href="index.php"> <img class="logo" src="assets/logo.png"></a>
-                <div class="search">
-                        <input id="search_input"></input>
-                        <button id="search_button"></button>     
-                                            
-                </div>
+                <a href="index.php"> <img class="logo" src="assets/logo_project.png"></a>                
+                        <?php
+							print '<h1 class="project_name">'.$row['ProjectName'].'</h1>';
+                        ?>
+                
                 <!--<div class="menu">
                 	<nav>  
                         	<ul>  
@@ -41,6 +52,7 @@
                               </ul>
                         </nav>
                 </div> -->
+
                 <select class="project_menu">
                 	<option>Problem Statement</option>
                     <option>Solution</option>
@@ -58,22 +70,10 @@
             </div>
             <div class="project_section">
 				<?php
-					include("config.php");
-                    if( isset($_GET['project'])){		
-                        $id= intval($_GET['project']);
-
-                    }
-					$sql = "SELECT * FROM Projects where Id = $id";
-					$result = mysql_query($sql, $mysql_conn)
-							  or die("Failed to select the id");
-					$row = mysql_fetch_array($result);
+					
 					print '<title>
 							' .$row['ProjectName']
-							.'</title>';
-							
-					print '<div class="project_name">
-           		     			<h1>Name: &nbsp; &nbsp;' .$row['ProjectName'] .'</h1>
-		                   </div>';
+							.'</title>';	
 					
 					print '<div class="problem_statement">
            		     			<h1>Problem Statement</h1>
