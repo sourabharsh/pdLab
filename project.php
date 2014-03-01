@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Untitled Document</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
     <link href="css/template.css" rel="stylesheet" type="text/css" />
 
     <link href="css/project_page.css" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
                         <button id="search_button"></button>     
                                             
                 </div>
-                <div class="menu">
+                <!--<div class="menu">
                 	<nav>  
                         	<ul>  
                                 <li>Home
@@ -40,19 +40,85 @@
                                 </li>
                               </ul>
                         </nav>
-                </div>
+                </div> -->
+                <select class="project_menu">
+                	<option>Problem Statement</option>
+                    <option>Solution</option>
+                    <option>Uniqueness</option>
+                    <option>Tech Details</option>
+                    <option>Status</option>
+                    <option>Acknowledgement</option>
+                    <option>Team</option>
+                    <option>Contact</option>
+                </select>
+                
             </div>
             
 			<div class="header_bottom">
             </div>
-            
             <div class="project_section">
-            <h1>
-            PROJECT #1
-            sdf
-            dfdsf
-            dfdf
-            </h1>
+				<?php
+					include("config.php");
+                    if( isset($_GET['project'])){		
+                        $id= intval($_GET['project']);
+
+                    }
+					$sql = "SELECT * FROM Projects where Id = $id";
+					$result = mysql_query($sql, $mysql_conn)
+							  or die("Failed to select the id");
+					$row = mysql_fetch_array($result);
+					print '<title>
+							' .$row['ProjectName']
+							.'</title>';
+							
+					print '<div class="project_name">
+           		     			<h1>Name: &nbsp; &nbsp;' .$row['ProjectName'] .'</h1>
+		                   </div>';
+					
+					print '<div class="problem_statement">
+           		     			<h1>Problem Statement</h1>
+								<p> &nbsp; &nbsp;' .$row['Description'] .'</p>
+		                   </div>';
+					print '<div class="problem_statement">
+                				<h1>Solution</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+							
+					print '<div class="problem_statement">
+                				<h1>Uniqueness</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+
+					print '<div class="problem_statement">
+                				<h1>Technical Details</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+					
+					print '<div class="problem_statement">
+                				<h1>Status</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+							
+					print '<div class="problem_statement">
+                				<h1>Acknowledgement</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+					
+												
+					print '<div class="problem_statement">
+                				<h1>The Team</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';
+							
+					print '<div class="problem_statement">
+                				<h1>Contact Details</h1>
+			                    <p> &nbsp; &nbsp;' .$row['Description'] .'</p>              
+            			    </div>';                    
+                ?>
+                
+            
+            	
+            
             </div>
 
 
