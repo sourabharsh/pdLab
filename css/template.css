@@ -5,66 +5,87 @@ body{
 	
 
 .container{
-	 background:none;
+	 background:#F6F7FA;
+	 width:100%;
+	 height:100%;
+
 	}
 
 .header_top{
 	background:white;
 	width:100%;
-	height:10px;
+	height:20px;	
+    background:#F6F7FA;
 	}
+	
 .header{
-	
-	height:150px;
+
+	height:60px;
 	width:100%;
-	vertical-align:middle;
-	display:inline;
+	background:#F6F7FA;
+	}
 	
-
-	}
 .header_bottom{
-	height:30px;
+	height:20px;
 	widows:100px;
-	}
 
-.pagination{
-	height:30px;
-	width:auto;
-	background:#999;
+	}
+.This_was_header h1{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:14px;
+	line-height:18px;
+	color:#999;
+	
+	padding:0;
+	font-weight:300;
+	margin:0px;
+	margin-left:27%;
+	
 	}
 	
 .footer{
-	height:50px;
-	width:auto;
-	background:#333;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-top:150px;
+	padding-left:20px;
+	margin-bottom:0px;
+	color:#999;
+	height:auto;
+	width:100%;
+	float:right;
+	font-weight:300;
+	background:#F6F7FA;;
 	}	
 
 .logo{
 	vertical-align:middle;
+	margin:0;
 	margin-left:10px;
 	display:inline-block;
 	}
 
 .search{
-	vertical-align:middle;
+
 	height:40px;
 	width:600px;
-	margin-left:20px;
+	margin-left:2%;
+	margin-bottom:0;
 
-	background:white;
 	display:inline;
 	vertical-align:middle;
 	}
 	
-#search_input{
-	font-size:25px;
-	font-family:Arial, Helvetica, sans-serif;
+#search_input{ 
+	font-size:24px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:300;
 	vertical-align:middle;
 	display:inline-block;
 	border:1px solid #CCC;
 	margin-right:0px;
+	padding-left:4px;
 	width:500px;
 	height:40px;
+   
 	}
 	
 #search_button{
@@ -73,6 +94,8 @@ body{
 	display:inline-block;
 	margin-right:0;
 	margin-left:0;
+	margin-bottom:0;
+	padding-bottom:0;
 	width:100px;
 	height:40px;
 	padding:0;
@@ -80,23 +103,166 @@ body{
 	background:url(../assets/search_button.png);
 	}
 	
-.search_result{
-	width:1000px;
-	height:200px;
-	margin-left:auto;
-	margin-right:30px;
-	margin-bottom:5px;
-	border: 1px dashed;
-	
+.search_section{
+	width: 80%;
+	height:auto;
+	float:right;
+	margin-right:3%;
 	}
 	
-.search_result:hover{
-	border-left:3px solid #4AC0F2;
+.search_result{
+	width:100%;
+	height:200px;
+	margin-top:3px;
+	margin-bottom:4px;
+	border-right:3px solid white;
+	background:#ffffff;
 	}
 
-.search_section_image{
+#pagination{
+	height:50px;
+	width:1003px;
+	
+	
+	text-align:center;
+	vertical-align:middle;
+	margin-right:30px;
+	margin-left:auto;
+	margin-top:5px;
+	
+	}
+
+	
+#pagination ul{
+	list-style:none;
+	color:#036;
+	padding:10px;
+	
+	
+	
+	}
+#paginationList{
+
+	}
+	
+
+#pagination li{
+	text-decoration:none;
+	font-family:'Source Sans Pro', sans-serif;
+	font-size:20px;
+	display:inline;
+	margin-left:10px;
+	margin-right:10px;
+	padding-left:5px;
+	padding-right:5px;
+
+	}
+
+#pagination li:hover{
+	border-bottom:2px solid #61C3CC;
+	}
+.active_page{
+	border-bottom:2px solid #61C3CC;
+	font-style:bold;
+	}
+
+#pagination span{
+	font-size:20px;
+	font-family:'Source Sans Pro', sans-serif;
+	font-weight:300;
+
+	}
+	
+#pagination a{
+	font-family:'Source Sans Pro', sans-serif;
+	text-decoration:none;
+	color:#61C3CC;
+
+	}
+
+#pagination a:visited{
+	border:2px solid #61C3CC;
+	}
+	
+#pagination a:hover{
+	text-decoration:none;
+	color:#61C3CC;
+	font-family:'Source Sans Pro', sans-serif;
+	border-bottom:2px solid #61C3CC;
+	
+	}
+
+.pagination_button{
+	vertical-align:middle;
+	width:40px;
+	height:40px;
+	border:none;
+	background:none;
+	font-size:18px;
+	border-bottom:2px solid white;	
+	}
+
+.pagination_button:hover{
+	border-bottom:2px solid #61C3CC;	
+	}
+	
+.pagination_images{
+	vertical-align:middle;
+	}
+
+.pagination_images:hover{
+	border-bottom:2px solid #61C3CC;	
+	}
+
+	
+.search_result:hover{
+	border-right:3px solid #61C3CC;
+	}
+
+.search_result_image{
+
 	width:300px;
 	height:200px;
 	margin-left:0px;
+	float:left;
+	display:inline-block;
+	vertical-align:middle;
 	}
 	
+.search_result_content{
+	margin-left:10px;
+	float:left;
+	width:670px;
+	display:inline-block;
+	vertical-align:middle;
+
+	overflow:hidden; 
+	}
+
+.search_result_title{
+	margin-top:15px;
+	margin-left:10px;
+	display:inline-block;
+	vertical-align:middle;
+	
+	}
+#title{
+	padding:0px;
+	margin:0px;
+	font-size:25px;
+	font-weight:bold;
+	font-family: 'Source Sans Pro', sans-serif;
+
+	color:#61C3CC;
+	}
+.search_result_summary{
+	font-size:17px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:300;
+	width: 100%;
+	height:150px;
+	display:inline-block;
+	vertical-align:middle;
+	color:#666;	
+	}
+

@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.project_menu{
+	visibility:hidden;
+	
+	height:30px;
+	background:white;
+	font-family:'Source Sans Pro', sans-serif;	
+	margin-right:100px;
+	margin-bottom:0px;
+	font-size:18px;
+	border:1px solid #CCC;
+	outline:0;
+	display:inline-block;
+	}
+	
+.project_section{
+	width:100%;
+	height:auto;
+	background:#F6F7FA;
+	margin-bottom:200px;
+	}
+
+.project_name{
+	font-family:'Source Sans Pro', sans-serif;
+	font-weight:300;
+	font-size:30px;
+	margin:0;	
+	margin-left:5%;
+	color:#61C3CC;	
+	vertical-align:middle;
+	display:inline-block;
+	}
+
+	
+.problem_statement {
+	margin:0;
+	margin-left:10px;
+	margin-right:5%;
+	padding:0;
+	font-family:'Source Sans Pro', sans-serif;
+	background:white;	
+	margin-bottom:5px;
+	}
+
+.problem_statement h1{
+	color:#61C3CC;		
+	font-size:22px;
+	margin:0;
+	
+	}
+
+.problem_statement p{
+	color:black;
+	font-size:17px;
+	padding:0;
+	margin:0;
+	}
+.menu{		
+	display:inline-block;
+	 }
+	 
+nav{
+	padding:0px;
+	margin-left:200px;
+	}
+
+nav ul ul{
+	display:none;
+	}	
+	
+nav ul li:hover >ul{
+	display:block;
+	}
+nav ul{
+	background:white;
+	border:none;
+	list-style:none;
+	position:relative;
+	display:inline-table;	
+	padding:0px;
+	}
+
+
+nav ul ll{
+	margin-right:5x;
+	}
+
+nav ul li a{
+	color:black;
+	display:block;
+	padding-right:5px;
+	text-decoration:none;
+	font-family:'Source Sans Pro', sans-serif;
+	font-weight:300;
+	}
+
+nav ul li a:hover{
+	display:block;
+	text-decoration:none;
+	border-right:2px solid #61C3CC;
+
+	}
